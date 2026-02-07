@@ -206,19 +206,22 @@
 
 <script type="module">
     import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-analytics.js";
     import { getFirestore, collection, addDoc, doc, setDoc, updateDoc, deleteDoc, increment, onSnapshot, serverTimestamp, query, where, orderBy, limit, getDoc } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-firestore.js";
     import { getAuth, onAuthStateChanged, GoogleAuthProvider, signInWithPopup, signOut } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-auth.js";
 
     const firebaseConfig = {
-        apiKey: "AIzaSyB_xkcJ87-E4jkYIDT2dBxOFJHUQvZxbU8",
-        authDomain: "myblogcomments-22808.firebaseapp.com",
-        projectId: "myblogcomments-22808",
-        storageBucket: "myblogcomments-22808.firebasestorage.app",
-        messagingSenderId: "1067155293144",
-        appId: "1:1067155293144:web:8f10b016462b52d36628ad"
+        apiKey: "AIzaSyA8gEe7oKefY3hAIvjk1XhmlvUZaoxhd98",
+        authDomain: "physarif-project.firebaseapp.com",
+        projectId: "physarif-project",
+        storageBucket: "physarif-project.firebasestorage.app",
+        messagingSenderId: "612153200817",
+        appId: "1:612153200817:web:66d8c8fe3e8191dd561290",
+        measurementId: "G-3XG1YRJ8PP"
     };
 
     const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
     const db = getFirestore(app);
     const auth = getAuth(app);
     const provider = new GoogleAuthProvider();
@@ -227,6 +230,7 @@
     const BOOKMARKS_PATH = 'blog_comments/pages/bookmarks';
     const NOTI_PATH = 'blog_comments/pages/notifications';
     const ADMIN_EMAIL = "phys.arif@gmail.com";
+
 
     window.currentUser = null;
     window.isAdmin = false;
